@@ -1,12 +1,13 @@
 Summary:	Library to access data on a CDDB server
 Summary(pl):	Biblioteka dostêpu do danych na serwerze CDDB
 Name:		libcddb
-Version:	0.9.5
+Version:	0.9.6
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libcddb/%{name}-%{version}.tar.gz
-# Source0-md5:	9db0b305a67ce0827966442bc0731c96
+# Source0-md5:	80269beda3a7a7099bf5492330180e78
+# Source0-size:	386918
 URL:		http://libcddb.sourceforge.net/
 Requires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
