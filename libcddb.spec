@@ -1,12 +1,12 @@
 Summary:	Library to access data on a CDDB server
 Summary(pl):	Biblioteka dostêpu do danych na serwerze CDDB
 Name:		libcddb
-Version:	0.9.4
-Release:	2
+Version:	0.9.5
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libcddb/%{name}-%{version}.tar.gz
-# Source0-md5:	366095f09e1d89d91915a2dd7c7c1478
+# Source0-md5:	9db0b305a67ce0827966442bc0731c96
 URL:		http://libcddb.sourceforge.net/
 Requires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -25,7 +25,7 @@ Próbuje byæ przeno¶na na ile to mo¿liwe.
 Summary:	Header files for libcddb library
 Summary(pl):	Pliki nag³ówkowe biblioteki libcddb
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libcddb library.
@@ -37,7 +37,7 @@ Pliki nag³ówkowe biblioteki libcddb.
 Summary:	Static libcddb library
 Summary(pl):	Statyczna biblioteka libcddb
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libcddb library.
