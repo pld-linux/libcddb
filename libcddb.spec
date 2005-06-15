@@ -1,3 +1,4 @@
+%bcond_without	static	# don't build static library
 Summary:	Library to access data on a CDDB server
 Summary(pl):	Biblioteka dostêpu do danych na serwerze CDDB
 Name:		libcddb
@@ -8,10 +9,12 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/libcddb/%{name}-%{version}.tar.gz
 # Source0-md5:	a8f8549cc1afb3bc702a96c7d71d2241
 URL:		http://libcddb.sourceforge.net/
+BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libcdio-devel >= 0.67
+BuildRequires:	libcdio-devel >= 0.74
+BuildRequires:	libtool
 BuildRequires:	pkgconfig
-Requires:	libcdio >= 0.67
+Requires:	libcdio >= 0.74
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -52,8 +55,12 @@ Statyczna biblioteka libcddb.
 %setup -q
 
 %build
-cp -f /usr/share/automake/config.sub .
-%configure
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
+%configure \
+	%{!?with_static:--disable-static}
 %{__make}
 
 %install
@@ -81,6 +88,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/cddb
 %{_pkgconfigdir}/*.pc
 
+%if %{with static}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%endif
