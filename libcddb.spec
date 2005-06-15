@@ -1,4 +1,6 @@
+# Conditional build:
 %bcond_without	static_libs	# don't build static library
+#
 Summary:	Library to access data on a CDDB server
 Summary(pl):	Biblioteka dostêpu do danych na serwerze CDDB
 Name:		libcddb
