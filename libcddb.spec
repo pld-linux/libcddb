@@ -1,15 +1,16 @@
+#
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Library to access data on a CDDB server
 Summary(pl):	Biblioteka dostêpu do danych na serwerze CDDB
 Name:		libcddb
-Version:	1.0.2
+Version:	1.2.0
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/libcddb/%{name}-%{version}.tar.gz
-# Source0-md5:	a8f8549cc1afb3bc702a96c7d71d2241
+Source0:	http://dl.sourceforge.net/libcddb/%{name}-%{version}.tar.bz2
+# Source0-md5:	1a3e46d2f0691d1308614ad494bb9e62
 URL:		http://libcddb.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
