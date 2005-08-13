@@ -14,6 +14,7 @@ Source0:	http://dl.sourceforge.net/libcddb/%{name}-%{version}.tar.bz2
 URL:		http://libcddb.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	libcdio-devel >= 0.74
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
