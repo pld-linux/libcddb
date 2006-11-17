@@ -12,13 +12,13 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/libcddb/%{name}-%{version}.tar.bz2
 # Source0-md5:	e4a7f9579956c32b7f300eb12e9ea6df
 URL:		http://libcddb.sourceforge.net/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.55
 BuildRequires:	automake
-BuildRequires:	gettext-devel
-BuildRequires:	libcdio-devel >= 0.74
+BuildRequires:	gettext-devel >= 0.14.4
+BuildRequires:	libcdio-devel >= 0.76
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-Requires:	libcdio >= 0.74
+Requires:	libcdio >= 0.76
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
