@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Library to access data on a CDDB server
-Summary(pl):	Biblioteka dostêpu do danych na serwerze CDDB
+Summary(pl.UTF-8):   Biblioteka dostÄ™pu do danych na serwerze CDDB
 Name:		libcddb
 Version:	1.3.0
 Release:	1
@@ -26,33 +26,33 @@ libcddb is a library that implements the different protocols (CDDBP,
 HTTP, SMTP) to access data on a CDDB server (http://freedb.org/). It
 tries to be as cross-platform as possible.
 
-%description -l pl
-libcddb to biblioteka zawieraj±ca implementacje protoko³ów (CDDBP,
-HTTP, SMTP) dostêpu do danych na serwerze CDDB (http://freedb.org/).
-Próbuje byæ przeno¶na na ile to mo¿liwe.
+%description -l pl.UTF-8
+libcddb to biblioteka zawierajÄ…ca implementacje protokoÅ‚Ã³w (CDDBP,
+HTTP, SMTP) dostÄ™pu do danych na serwerze CDDB (http://freedb.org/).
+PrÃ³buje byÄ‡ przenoÅ›na na ile to moÅ¼liwe.
 
 %package devel
 Summary:	Header files for libcddb library
-Summary(pl):	Pliki nag³ówkowe biblioteki libcddb
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libcddb
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libcddb library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki libcddb.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki libcddb.
 
 %package static
 Summary:	Static libcddb library
-Summary(pl):	Statyczna biblioteka libcddb
+Summary(pl.UTF-8):   Statyczna biblioteka libcddb
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libcddb library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka libcddb.
 
 %prep
