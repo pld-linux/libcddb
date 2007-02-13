@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Library to access data on a CDDB server
-Summary(pl.UTF-8):   Biblioteka dostępu do danych na serwerze CDDB
+Summary(pl.UTF-8):	Biblioteka dostępu do danych na serwerze CDDB
 Name:		libcddb
 Version:	1.3.0
 Release:	1
@@ -33,7 +33,7 @@ Próbuje być przenośna na ile to możliwe.
 
 %package devel
 Summary:	Header files for libcddb library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libcddb
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libcddb
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -45,7 +45,7 @@ Pliki nagłówkowe biblioteki libcddb.
 
 %package static
 Summary:	Static libcddb library
-Summary(pl.UTF-8):   Statyczna biblioteka libcddb
+Summary(pl.UTF-8):	Statyczna biblioteka libcddb
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
