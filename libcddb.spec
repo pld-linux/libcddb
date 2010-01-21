@@ -5,12 +5,12 @@
 Summary:	Library to access data on a CDDB server
 Summary(pl.UTF-8):	Biblioteka dostępu do danych na serwerze CDDB
 Name:		libcddb
-Version:	1.3.0
-Release:	4
+Version:	1.3.2
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libcddb/%{name}-%{version}.tar.bz2
-# Source0-md5:	e4a7f9579956c32b7f300eb12e9ea6df
+# Source0-md5:	8bb4a6f542197e8e9648ae597cd6bc8a
 URL:		http://libcddb.sourceforge.net/
 BuildRequires:	autoconf >= 2.55
 BuildRequires:	automake
@@ -69,9 +69,13 @@ Statyczna biblioteka libcddb.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# install examples
+install examples/*.{c,h} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -82,18 +86,20 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_bindir}/cddb_query
+%attr(755,root,root) %{_libdir}/libcddb.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libcddb.so.2
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libcddb.so
+%{_libdir}/libcddb.la
 %{_includedir}/cddb
-%{_pkgconfigdir}/*.pc
+%{_pkgconfigdir}/libcddb.pc
+%{_examplesdir}/%{name}-%{version}
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libcddb.a
 %endif
