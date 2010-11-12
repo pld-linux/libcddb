@@ -9,7 +9,7 @@ Version:	1.3.2
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/libcddb/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/libcddb/%{name}-%{version}.tar.bz2
 # Source0-md5:	8bb4a6f542197e8e9648ae597cd6bc8a
 URL:		http://libcddb.sourceforge.net/
 BuildRequires:	autoconf >= 2.55
@@ -62,6 +62,7 @@ Statyczna biblioteka libcddb.
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
 	%{!?with_static_libs:--disable-static}
