@@ -6,8 +6,8 @@ Summary:	Library to access data on a CDDB server
 Summary(pl.UTF-8):	Biblioteka dostępu do danych na serwerze CDDB
 Name:		libcddb
 Version:	1.3.2
-Release:	4
-License:	LGPL
+Release:	5
+License:	LGPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libcddb/%{name}-%{version}.tar.bz2
 # Source0-md5:	8bb4a6f542197e8e9648ae597cd6bc8a
@@ -78,6 +78,9 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 # install examples
 install examples/*.{c,h} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libcddb.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -94,7 +97,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libcddb.so
-%{_libdir}/libcddb.la
 %{_includedir}/cddb
 %{_pkgconfigdir}/libcddb.pc
 %{_examplesdir}/%{name}-%{version}
