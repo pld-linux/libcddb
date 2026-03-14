@@ -6,7 +6,7 @@ Summary:	Library to access data on a CDDB server
 Summary(pl.UTF-8):	Biblioteka dostępu do danych na serwerze CDDB
 Name:		libcddb
 Version:	1.3.2
-Release:	12
+Release:	13
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libcddb/%{name}-%{version}.tar.bz2
@@ -62,7 +62,7 @@ Statyczna biblioteka libcddb.
 
 %build
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I%{_datadir}/gettext/m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
@@ -78,7 +78,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 	DESTDIR=$RPM_BUILD_ROOT
 
 # install examples
-install examples/*.{c,h} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -p examples/*.{c,h} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 # obsoleted by pkg-config
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libcddb.la
@@ -93,12 +93,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/cddb_query
-%attr(755,root,root) %{_libdir}/libcddb.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libcddb.so.2
+%{_libdir}/libcddb.so.*.*.*
+%ghost %{_libdir}/libcddb.so.2
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libcddb.so
+%{_libdir}/libcddb.so
 %{_includedir}/cddb
 %{_pkgconfigdir}/libcddb.pc
 %{_examplesdir}/%{name}-%{version}
