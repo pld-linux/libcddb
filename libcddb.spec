@@ -6,7 +6,7 @@ Summary:	Library to access data on a CDDB server
 Summary(pl.UTF-8):	Biblioteka dostępu do danych na serwerze CDDB
 Name:		libcddb
 Version:	1.3.2
-Release:	13
+Release:	14
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libcddb/%{name}-%{version}.tar.bz2
