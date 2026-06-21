@@ -6,12 +6,12 @@ Summary:	Library to access data on a CDDB server
 Summary(pl.UTF-8):	Biblioteka dostępu do danych na serwerze CDDB
 Name:		libcddb
 Version:	1.3.2
-Release:	14
+Release:	15
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libcddb/%{name}-%{version}.tar.bz2
 # Source0-md5:	8bb4a6f542197e8e9648ae597cd6bc8a
-Patch0:		%{name}-socklen-type.patch
+Patch0:		pointer-types.patch
 URL:		http://libcddb.sourceforge.net/
 BuildRequires:	autoconf >= 2.55
 BuildRequires:	automake
@@ -58,7 +58,7 @@ Statyczna biblioteka libcddb.
 
 %prep
 %setup -q
-%patch -P0 -p1
+%patch -P0 -p0
 
 %build
 %{__libtoolize}
