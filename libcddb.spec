@@ -1,18 +1,18 @@
 #
 # Conditional build:
-%bcond_without	static_libs	# don't build static library
+%bcond_without	static_libs	# static library
 #
 Summary:	Library to access data on a CDDB server
 Summary(pl.UTF-8):	Biblioteka dostępu do danych na serwerze CDDB
 Name:		libcddb
 Version:	1.3.2
-Release:	15
+Release:	16
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/libcddb/%{name}-%{version}.tar.bz2
+Source0:	https://downloads.sourceforge.net/libcddb/%{name}-%{version}.tar.bz2
 # Source0-md5:	8bb4a6f542197e8e9648ae597cd6bc8a
 Patch0:		pointer-types.patch
-URL:		http://libcddb.sourceforge.net/
+URL:		https://libcddb.sourceforge.net/
 BuildRequires:	autoconf >= 2.55
 BuildRequires:	automake
 BuildRequires:	gettext-tools >= 0.14.4
@@ -36,7 +36,7 @@ Próbuje być przenośna na ile to możliwe.
 Summary:	Header files for libcddb library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libcddb
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 Header files for libcddb library.
@@ -48,7 +48,7 @@ Pliki nagłówkowe biblioteki libcddb.
 Summary:	Static libcddb library
 Summary(pl.UTF-8):	Statyczna biblioteka libcddb
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static
 Static libcddb library.
